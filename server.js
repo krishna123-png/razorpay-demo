@@ -3,8 +3,14 @@ const Razorpay = require('razorpay');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
 app.use(express.json());
+
+app.use(cors(
+    {
+        origin: 'https://razorpay-demo-frontend.vercel.app/',
+        credentials: true
+    }
+));
 
 const razorpay = new Razorpay({
   key_id: 'rzp_test_GdEOcJEYrxRG1I',       // Replace with your Test Key ID
@@ -26,5 +32,5 @@ app.post('/create-order', async (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
+  console.log('Server running on port 3000');
 });
