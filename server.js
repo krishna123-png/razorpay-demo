@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.use(cors(
     {
-        origin: 'https://razorpay-demo-frontend.vercel.app/',
+        origin: 'https://razorpay-demo-frontend.vercel.app',
         credentials: true
     }
 ));
